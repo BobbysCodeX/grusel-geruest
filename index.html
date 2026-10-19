@@ -1,1 +1,135 @@
-@file:output/gruselgeruest_dashboard.html
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GRUSEL-Gerüst</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Arial,sans-serif;background:#12101c;color:#ece9f5;line-height:1.5}
+.wrap{max-width:760px;margin:auto;padding:16px}
+h1{font-family:Georgia,serif;font-size:28px;margin:6px 0}
+h2{font-family:Georgia,serif;color:#ff9f5a;margin:22px 0 8px}
+.sub{color:#a9a4c0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.tabs button{flex:1;min-width:70px;padding:11px 6px;border-radius:12px;border:1px solid #3a3555;background:#1c1830;color:#ece9f5;font-size:16px}
+.tabs button.on{background:#b79cf6;color:#12101c;font-weight:700}
+section{display:none}section.on{display:block}
+.card{background:#1c1830;border:1px solid #3a3555;border-left:6px solid #b79cf6;border-radius:14px;padding:14px 16px;margin:10px 0}
+.card.o{border-left-color:#ff9f5a}.card.g{border-left-color:#5fcf9f}.card.p{border-left-color:#f272a0}.card.y{border-left-color:#f2d15f}
+.card h3{margin:0 0 4px;font-size:18px}
+.L{display:inline-flex;width:36px;height:36px;border-radius:50%;background:#5fcf9f;color:#12101c;font:700 20px Georgia,serif;align-items:center;justify-content:center;margin-right:8px}
+.pill{display:inline-block;border:1px solid #3a3555;background:#12101c;border-radius:18px;padding:4px 12px;margin:3px 3px 3px 0;font-size:15px}
+.btn{background:#b79cf6;color:#12101c;font-weight:700;border:0;border-radius:12px;padding:12px 18px;font-size:16px;margin:4px 4px 4px 0}
+.btn.o{background:transparent;color:#b79cf6;border:1px solid #b79cf6}
+.word{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #2c2845;font-size:19px}
+.word .w{flex:1;font-weight:600}.word .ok{color:#5fcf9f;font-size:20px}
+textarea{width:100%;min-height:200px;background:#0d0b15;color:#ece9f5;border:1px solid #3a3555;border-radius:12px;padding:12px;font-size:16px;font-family:inherit}
+mark{background:#ff9f5a44;color:#ffd0a8;border-radius:4px;padding:0 3px}
+.fc{background:#1c1830;border:1px solid #3a3555;border-left:6px solid #5fcf9f;border-radius:14px;min-height:180px;padding:20px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.fc .big{width:70px;height:70px;font-size:38px;margin:0}
+.step{margin:10px 0;padding:10px 12px;border-radius:10px;background:#12101c}
+.step b{color:#5fcf9f}
+label{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #2c2845}
+input[type=checkbox]{width:22px;height:22px;flex:none}
+.cnt{color:#a9a4c0;font-size:14px}
+.hide{display:none}
+.sn{cursor:pointer;border-bottom:1px dotted #8a80b8}
+input[type=text],select{background:#0d0b15;color:#ece9f5;border:1px solid #3a3555;border-radius:10px;padding:10px;font-size:16px}
+.row{display:flex;gap:6px;margin:6px 0;flex-wrap:wrap}.row input{flex:2;min-width:120px}.row select{flex:1;min-width:80px}
+</style></head><body><div class="wrap">
+<h1>👻 GRUSEL-Gerüst</h1>
+<div class="sub">Jede Gruselgeschichte aus 6 Bausteinen. Immer gleich aufgebaut, schnell gelernt.</div>
+<div class="tabs" id="tabs"></div>
+
+<section id="t0">
+<h2>Die 6 Bausteine: G-R-U-S-E-L</h2>
+<div id="steps"></div>
+<div class="card y"><h3>Pflichtregeln</h3>
+Präteritum (Rede im Präsens) · Überschrift · mindestens 2× wörtliche Rede · alle Reizwörter benutzen und unterstreichen (dürfen gebeugt werden) · ca. 250–350 Wörter (Vorgabe der Lehrkraft beachten!)</div>
+<div class="card o"><h3>Zeitplan bei 50 Minuten</h3>5 Min Plan (Wörter auf G-R-U-S-E-L verteilen) · 30 Min Schreiben · 10 Min Check · 5 Min Puffer</div>
+</section>
+
+<section id="t1">
+<h2>Spannungs-Treppe</h2>
+<div class="card o">
+<b>Stufe 1: Hören</b><br><span class="pills" data-w="knarren,flüstern,Schritte,Kratzen,Heulen,Klopfen,Tropfen,Quietschen"></span><br>
+<b>Stufe 2: Sehen</b><br><span class="pills" data-w="Schatten,Flackern,Nebel,Umriss,Augenpaar,Bewegung,Lichtschein"></span><br>
+<b>Stufe 3: Spüren</b><br><span class="pills" data-w="Kälte,Gänsehaut,Zittern,Herzklopfen,kalter Schweiß,Atem stockt"></span></div>
+<h2>Spannungs-Tricks</h2>
+<div class="card g">
+<p><b>Zeigen statt sagen:</b> nicht „Er hatte Angst“, sondern „Seine Knie zitterten.“</p>
+<p><b>Lang, dann kurz:</b> vor der Spitze längere Sätze, an der Spitze kurze: „Ein Schritt. Noch einer. Stille.“</p>
+<p><b>Verzögern:</b> „Doch dann …“, „Er zögerte …“, „Langsam, ganz langsam …“</p>
+<p><b>Dreierregel:</b> Zweimal passiert nichts Schlimmes, beim dritten Mal schon.</p>
+<p><b>Alle Sinne:</b> modrig riechen, eiskalt spüren, leise hören.</p>
+<p><b>Plötzlich sparen:</b> höchstens einmal, direkt vor der Spitze.</p>
+<p><b>Gedanken &amp; Rede:</b> „Nur nicht umdrehen“, dachte sie. – „Wer ist da?“, flüsterte er.</p></div>
+<h2>Wortschatz-Kiste</h2>
+<div class="card p">
+<b>statt „gehen“</b><br><span class="pills" data-w="schleichen,tasten,huschen,stolpern,tappen,sich vorwagen"></span><br>
+<b>statt „sagen“</b><br><span class="pills" data-w="flüstern,hauchen,krächzen,schreien,stammeln,wimmern"></span><br>
+<b>statt „dann“</b><br><span class="pills" data-w="plötzlich,auf einmal,kurz darauf,in diesem Moment,Sekunden später,doch dann"></span><br>
+<b>statt „Angst“</b><br><span class="pills" data-w="Gänsehaut,Herz klopfte bis zum Hals,Knie wurden weich,Atem stockte,Kehle trocken,Magen zog sich zusammen"></span><br>
+<b>Stimmung</b><br><span class="pills" data-w="düster,unheimlich,modrig,gespenstisch,eiskalt,verlassen,bleich,lautlos,rostig"></span><br>
+<b>Geräusche</b><br><span class="pills" data-w="Knarren,Rascheln,Poltern,Seufzen,Klirren,Echo,Stille"></span><br>
+<b>Orte</b><br><span class="pills" data-w="Dachboden,Keller,Friedhof,Villa,Ruine,Wald,Gang,Turm,Brunnen"></span></div>
+<h2>Satzanfänge</h2>
+<div class="card" id="sa"></div>
+<h2>Universalsätze</h2>
+<div class="card o" id="usatz"></div>
+</section>
+<section id="tb">
+<h2>Baukasten: Geschichte aus deinen Wörtern</h2>
+<div class="sub">Gib die Reizwörter ein, wähle Wortart (der/die/das, Plural, Verb, Adjektiv) und den Baustein. Der Baukasten setzt die Wörter in universelle Sätze ein.</div>
+<div class="card">
+<div class="row"><input type="text" id="bname" placeholder="Name der Figur" value="Mia"><select id="bsex"><option value="1">sie</option><option value="0">er</option></select></div>
+<div class="row"><select id="bort" style="flex:1 1 100%"></select></div>
+<div id="brows"></div>
+<button class="btn" onclick="bauen()">✍️ Geschichte bauen</button><button class="btn o" onclick="bzufall()">🎲 Zufallswörter</button>
+<div class="cnt">Verben bitte in der Grundform (flüstern, schleichen), am besten ohne Vorsilbe. Passt ein Satz nicht, tippe ihn an.</div></div>
+<div id="bout"></div>
+</section>
+
+<section id="t2">
+<h2>Würfeln &amp; Üben</h2>
+<div class="sub">1. Würfeln · 2. Wörter auf G-R-U-S-E-L verteilen · 3. Geschichte schreiben · 4. Wörter prüfen · 5. Musterlösung ansehen</div>
+<p><button class="btn" onclick="rollFree()">🎲 Zufallswörter</button><button class="btn o" onclick="rollProfi()">⭐ Profi-Set</button></p>
+<div class="card" id="words"></div>
+<h2>Meine Geschichte</h2>
+<textarea id="txt" placeholder="Schreibe hier deine Gruselgeschichte …" oninput="chk()"></textarea>
+<div class="cnt" id="wc"></div>
+<h2>Musterlösung</h2>
+<button class="btn o" onclick="toggleSol()" id="solbtn">Musterlösung anzeigen</button>
+<div id="sol" class="hide"></div>
+</section>
+<section id="t3">
+<h2>Check vor der Abgabe</h2>
+<div class="card g" id="ck"></div><div id="ckr" class="cnt"></div>
+</section>
+<section id="t4">
+<h2>Merk-Karten</h2>
+<div class="sub">Sag zuerst laut, was hinter dem Buchstaben steckt. Dann aufdecken.</div>
+<div class="fc" id="fc" onclick="flip()"></div>
+<p><button class="btn" onclick="nx(1)">Nächste Karte</button><button class="btn o" onclick="nx(0)">Zufall</button></p>
+</section>
+</div>
+<script>
+
+const STEPS=[
+["G","Gruselort","Einleitung · 3–4 Sätze","Wer? Wann? Wo? Alles wirkt noch normal. Ein Reizwort einbauen. Ein kleiner Hinweis auf Gefahr.","Es war ein stürmischer Abend, als … · Nichts ahnend … · Draußen lag dichter Nebel …"],
+["R","Rätselhaftes Zeichen","Störung · 2–3 Sätze","Das erste seltsame Ereignis: Geräusch, Licht, Kälte, Fund. Die Figur wird neugierig.","Da hörte … · Etwas stimmte nicht. · Auf dem Boden lag …"],
+["U","Unheimliches steigt","Steigerung · 6–10 Sätze","Drei Stufen: Beunruhigung → Furcht → Angst. Pro Stufe: ein Sinn + Körperreaktion + Gedanke oder Rede. Reizwörter verteilen.","Ein mulmiges Gefühl … · Das … wurde lauter. · Angst packte … · „…“, flüsterte …"],
+["S","Spitze","Höhepunkt · 4–6 Sätze","Der schlimmste Moment in Zeitlupe: kurze Sätze, Wiederholung, offen lassen. Hier einmal „Plötzlich“ oder „Auf einmal“.","Ein Schritt. Noch ein Schritt. Stille. · Langsam drehte … sich um. · Da – …"],
+["E","Entwirrung","Wende · 1–3 Sätze","Auflösung: Es war ganz anders! Oder: Es ist noch nicht vorbei.","Doch dann … · In Wahrheit war es … · Es war nur …"],
+["L","Letzter Satz","Schluss · 2–3 Sätze","Gefühl der Figur + kleiner Nachschock oder offene Frage.","Erleichtert … Doch … · Seitdem … · Und bis heute …"]];
+const cls=['o','g','p','y','o','g'];
+const stepsEl=document.getElementById('steps');
+STEPS.forEach((s,i)=>{stepsEl.innerHTML+=`<div class="card ${cls[i]}"><h3><span class="L">${s[0]}</span>${s[1]} <span class="cnt">${s[2]}</span></h3>${s[3]}<div class="cnt" style="margin-top:6px">${s[4]}</div></div>`});
+document.getElementById('sa').innerHTML=STEPS.map(s=>`<p><b>${s[0]} ${s[1]}:</b> ${s[4]}</p>`).join('');
+document.querySelectorAll('.pills').forEach(e=>e.innerHTML=e.dataset.w.split(',').map(x=>`<span class="pill">${x}</span>`).join(''));
+const tabs=["Gerüst","Werkzeug","Baukasten","Üben","Check","Karten"];
+const tb=document.getElementById('tabs');
+tabs.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>show(i);tb.appendChild(b)});
+function show(i){document.querySelectorAll('section').forEach((s,k)=>s.classList.toggle('on',k==i));[...tb.children].forEach((b,k)=>b.classList.toggle('on',k==i));window.scrollTo(0,0)}
+show(0);
+const SETS=[
+{t:"Die Puppe auf dem Dachboden",w:["Dachboden","Kerze","Puppe","Flüstern","Treppe"],
+p:["Mia bei Oma, Sturm","[[Flüstern]] von oben",
